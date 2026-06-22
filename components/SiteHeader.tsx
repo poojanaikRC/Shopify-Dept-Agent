@@ -22,7 +22,7 @@ export default function SiteHeader() {
             Dashboard
           </Link>
           <Link href="/newsletter" className="rounded-md px-3 py-1.5 text-white/90 transition hover:bg-white/15">
-            Intelligence
+            Newsletter
           </Link>
           <Link href="/weekly-plan" className="rounded-md px-3 py-1.5 text-white/90 transition hover:bg-white/15">
             Weekly Plan

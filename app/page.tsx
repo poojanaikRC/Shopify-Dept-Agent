@@ -38,7 +38,7 @@ export default function HomePage() {
             <span><b className="text-white">{report.roadmap.length}</b> roadmaps</span>
           </div>
           <div className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-sh-accent">
-            Open intelligence report
+            Open newsletter
             <span className="transition group-hover:translate-x-0.5">→</span>
           </div>
         </Link>
