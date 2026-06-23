@@ -21,6 +21,9 @@ export default function SiteHeader() {
           <Link href="/" className="rounded-md px-3 py-1.5 text-white/90 transition hover:bg-white/15">
             Dashboard
           </Link>
+          <Link href="/accelerators" className="rounded-md px-3 py-1.5 text-white/90 transition hover:bg-white/15">
+            Accelerators
+          </Link>
           <Link href="/newsletter" className="rounded-md px-3 py-1.5 text-white/90 transition hover:bg-white/15">
             Newsletter
           </Link>
