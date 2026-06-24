@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { accelerators } from "@/data/accelerators";
+import { accelerators, type AcceleratorStatus } from "@/data/accelerators";
 
 export function generateStaticParams() {
   return accelerators.map((a) => ({ slug: a.slug }));
@@ -17,6 +17,12 @@ const BG: Record<string, string>     = { "sh-green":"bg-sh-green", "sh-teal":"bg
 const TEXT: Record<string, string>   = { "sh-green":"text-sh-green", "sh-teal":"text-sh-teal", "rc-blue":"text-rc-blue", "rc-accent":"text-rc-accent" };
 const BORDER: Record<string, string> = { "sh-green":"border-sh-green", "sh-teal":"border-sh-teal", "rc-blue":"border-rc-blue", "rc-accent":"border-rc-accent" };
 const LIGHT: Record<string, string>  = { "sh-green":"bg-sh-chip border-sh-border", "sh-teal":"bg-[#F0FDFA] border-[#99F6E4]", "rc-blue":"bg-[#EFF6FF] border-[#BFDBFE]", "rc-accent":"bg-[#FFF7ED] border-[#FED7AA]" };
+
+const STATUS_STYLE: Record<AcceleratorStatus, { bg: string; text: string; dot: string }> = {
+  "In Progress":   { bg: "bg-white/20", text: "text-white", dot: "bg-[#10B981]" },
+  "In Evaluation": { bg: "bg-[#FEF3C7]", text: "text-[#92400E]", dot: "bg-[#F59E0B]" },
+  "Enablement":    { bg: "bg-[#DBEAFE]", text: "text-[#1E40AF]", dot: "bg-[#3B82F6]" },
+};
 
 export default function AcceleratorPage({ params }: { params: { slug: string } }) {
   const acc = accelerators.find((a) => a.slug === params.slug);
@@ -50,7 +56,12 @@ export default function AcceleratorPage({ params }: { params: { slug: string } }
               )}
             </div>
           </div>
-          <div className="mt-7 flex items-center gap-3">
+          <div className="mt-7 flex flex-wrap items-center gap-3">
+            <span className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-sm font-bold ${STATUS_STYLE[acc.status].bg} ${STATUS_STYLE[acc.status].text}`}>
+              <span className={`h-2 w-2 rounded-full ${STATUS_STYLE[acc.status].dot}`} />
+              {acc.status}
+            </span>
+            <span className="text-sm text-white/50">·</span>
             <span className="text-sm text-white/70 font-medium">Active in 2026:</span>
             {[1,2,3,4].map(q => (
               <span key={q} className={`rounded-full px-3 py-1 text-sm font-bold ${acc.activeQuarters.includes(q) ? "bg-white text-sh-dark" : "bg-white/15 text-white/40"}`}>

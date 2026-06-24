@@ -2,6 +2,8 @@
 // SHOPIFY PRACTICE — ACCELERATORS DATA (redesigned, no duplication)
 // ---------------------------------------------------------------------------
 
+export type AcceleratorStatus = "In Progress" | "In Evaluation" | "Enablement";
+
 export interface Accelerator {
   id: string;
   number: string;
@@ -11,6 +13,7 @@ export interface Accelerator {
   color: string;
   icon: string;
   activeQuarters: number[];
+  status: AcceleratorStatus;
 
   // What it is & the problem it solves
   problemStatement: string;   // The pain we see in the market
@@ -48,6 +51,7 @@ export const accelerators: Accelerator[] = [
     color: "sh-green",
     icon: "🔄",
     activeQuarters: [3],
+    status: "In Progress",
 
     problemStatement:
       "Most commerce migrations fail not because of technology — but because of poor planning, underestimated data complexity, and lack of a structured playbook. Teams moving from Adobe Commerce, Salesforce Commerce Cloud, SAP, commercetools, or WooCommerce face months of uncertainty, spiralling costs, and business disruption.",
@@ -150,6 +154,7 @@ export const accelerators: Accelerator[] = [
     color: "sh-teal",
     icon: "🏭",
     activeQuarters: [3],
+    status: "In Evaluation",
 
     problemStatement:
       "Manufacturers, distributors, and wholesalers are still processing orders through phone, email, and spreadsheets — or running custom-built portals that are expensive to maintain and painful to use. Their B2B customers expect the same experience they get on consumer sites: self-service, real-time pricing, and instant order status.",
@@ -252,6 +257,7 @@ export const accelerators: Accelerator[] = [
     color: "rc-blue",
     icon: "🧠",
     activeQuarters: [3],
+    status: "Enablement",
 
     problemStatement:
       "Shopify merchants are losing revenue every day to poor product discovery. Customers who can't find what they're looking for abandon — and most Shopify stores are still running keyword-only search with no personalization, no merchandising intelligence, and no visibility into why customers are leaving. As AI shopping agents emerge, brands that haven't optimized for semantic discovery will be invisible to AI buyers.",
@@ -354,6 +360,7 @@ export const accelerators: Accelerator[] = [
     color: "rc-accent",
     icon: "📈",
     activeQuarters: [2, 3],
+    status: "Enablement",
 
     problemStatement:
       "Most Shopify merchants know their store isn't performing as well as it could — but they don't know where to focus. Conversion is low, but is it a UX problem, a search problem, a checkout problem, or a merchandising problem? Without a structured audit, optimization efforts are scattered and ROI is hard to prove.",
@@ -456,6 +463,7 @@ export const accelerators: Accelerator[] = [
     color: "rc-blue",
     icon: "🔁",
     activeQuarters: [3, 4],
+    status: "In Evaluation",
 
     problemStatement:
       "Shopify has no native B2B subscription capability. Today, manufacturers, distributors, and wholesalers who want to offer recurring orders or contract-based billing on Shopify have two options: stitch together DTC subscription apps that weren't designed for B2B (no company accounts, no net terms, no buyer-specific pricing), or manage recurring orders manually through sales reps and spreadsheets. Neither scales. This is a genuine platform gap — and Royal Cyber is building the app to close it.",

@@ -1,9 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { accelerators } from "@/data/accelerators";
+import { accelerators, type AcceleratorStatus } from "@/data/accelerators";
 
 export const metadata: Metadata = {
   title: "Shopify Practice Accelerators — Royal Cyber",
+};
+
+const STATUS_STYLE: Record<AcceleratorStatus, { bg: string; text: string; dot: string }> = {
+  "In Progress":   { bg: "bg-[#D1FAE5]", text: "text-[#065F46]", dot: "bg-[#10B981]" },
+  "In Evaluation": { bg: "bg-[#FEF3C7]", text: "text-[#92400E]", dot: "bg-[#F59E0B]" },
+  "Enablement":    { bg: "bg-[#DBEAFE]", text: "text-[#1E40AF]", dot: "bg-[#3B82F6]" },
 };
 
 const ACCENT_BG: Record<string, string> = {
@@ -76,6 +82,12 @@ export default function AcceleratorsPage() {
                   )}
                 </div>
                 <h2 className="text-[17px] font-bold leading-snug text-sh-dark">{acc.title}</h2>
+                <div className="mt-1.5">
+                  <span className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-[11px] font-semibold ${STATUS_STYLE[acc.status].bg} ${STATUS_STYLE[acc.status].text}`}>
+                    <span className={`h-1.5 w-1.5 rounded-full ${STATUS_STYLE[acc.status].dot}`} />
+                    {acc.status}
+                  </span>
+                </div>
               </div>
             </div>
 
