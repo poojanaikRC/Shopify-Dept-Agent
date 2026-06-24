@@ -41,6 +41,13 @@ export default function AcceleratorPage({ params }: { params: { slug: string } }
               </div>
               <h1 className="text-2xl font-extrabold leading-tight sm:text-3xl">{acc.title}</h1>
               <p className="mt-2 max-w-2xl text-[15px] text-white/85 font-medium">{acc.tagline}</p>
+              {acc.id === "b2b-subscriptions" && (
+                <div className="mt-3 flex flex-wrap gap-2">
+                  <span className="rounded-full bg-white/20 px-3 py-1 text-xs font-bold text-white">🛍 Shopify App Store listing</span>
+                  <span className="rounded-full bg-[#FEF3C7] px-3 py-1 text-xs font-bold text-[#92400E]">Coming Q4 2026</span>
+                  <span className="rounded-full bg-white/15 px-3 py-1 text-xs font-bold text-white">Beta partners open now</span>
+                </div>
+              )}
             </div>
           </div>
           <div className="mt-7 flex items-center gap-3">

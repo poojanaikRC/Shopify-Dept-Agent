@@ -59,9 +59,21 @@ export default function AcceleratorsPage() {
               <div className={`flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl text-2xl ${ACCENT_BG[acc.color]} text-white shadow-sm`}>
                 {acc.icon}
               </div>
-              <div>
-                <div className={`text-[11px] font-bold uppercase tracking-widest ${ACCENT_TEXT[acc.color]}`}>
-                  Accelerator {acc.number}
+              <div className="flex-1">
+                <div className="flex items-center gap-2 flex-wrap">
+                  <div className={`text-[11px] font-bold uppercase tracking-widest ${ACCENT_TEXT[acc.color]}`}>
+                    Accelerator {acc.number}
+                  </div>
+                  {acc.id === "b2b-subscriptions" && (
+                    <span className="rounded-full bg-rc-blue px-2.5 py-0.5 text-[10px] font-bold text-white">
+                      🛍 App Store
+                    </span>
+                  )}
+                  {acc.id === "b2b-subscriptions" && (
+                    <span className="rounded-full bg-[#FEF3C7] px-2.5 py-0.5 text-[10px] font-bold text-[#92400E]">
+                      Coming Q4 2026
+                    </span>
+                  )}
                 </div>
                 <h2 className="text-[17px] font-bold leading-snug text-sh-dark">{acc.title}</h2>
               </div>
@@ -155,25 +167,23 @@ export default function AcceleratorsPage() {
 
         {/* CTA banner */}
         <div className="rounded-2xl bg-gradient-to-r from-sh-dark to-sh-green p-8 text-white">
-          <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
-            <div>
-              <div className="mb-1 text-xs font-bold uppercase tracking-widest text-white/70">Ready to get started?</div>
-              <h3 className="text-xl font-extrabold">Book a free accelerator discovery call</h3>
-              <p className="mt-1.5 max-w-xl text-sm text-white/75">
-                Every engagement starts with a no-cost assessment. Pick the accelerator that fits your challenge and we&apos;ll scope it with you in a single 60-minute session.
-              </p>
-            </div>
-            <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-              {accelerators.map((acc) => (
-                <Link
-                  key={acc.id}
-                  href={`/accelerators/${acc.slug}`}
-                  className="whitespace-nowrap rounded-lg bg-white/15 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/25"
-                >
-                  {acc.icon} {acc.title.replace(" Accelerator","").replace(" Assessment","")}
-                </Link>
-              ))}
-            </div>
+          <div className="mb-6">
+            <div className="mb-1 text-xs font-bold uppercase tracking-widest text-white/70">Ready to get started?</div>
+            <h3 className="text-xl font-extrabold">Book a free accelerator discovery call</h3>
+            <p className="mt-1.5 max-w-2xl text-sm text-white/75">
+              Every engagement starts with a no-cost assessment. Pick the accelerator that fits your challenge and we&apos;ll scope it with you in a single 60-minute session.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-3">
+            {accelerators.map((acc) => (
+              <Link
+                key={acc.id}
+                href={`/accelerators/${acc.slug}`}
+                className="whitespace-nowrap rounded-lg bg-white/15 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/25"
+              >
+                {acc.icon} {acc.title}
+              </Link>
+            ))}
           </div>
         </div>
       </section>
