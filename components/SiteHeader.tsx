@@ -30,6 +30,9 @@ export default function SiteHeader() {
           <Link href="/weekly-plan" className="rounded-md px-3 py-1.5 text-white/90 transition hover:bg-white/15">
             Weekly Plan
           </Link>
+          <Link href="/projects" className="rounded-md px-3 py-1.5 text-white/90 transition hover:bg-white/15">
+            Projects
+          </Link>
         </nav>
       </div>
     </header>
