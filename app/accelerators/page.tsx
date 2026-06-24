@@ -6,25 +6,29 @@ export const metadata: Metadata = {
   title: "Shopify Practice Accelerators — Royal Cyber",
 };
 
-const ACCENT: Record<string, string> = {
-  "sh-green":   "border-sh-green bg-sh-green",
-  "sh-teal":    "border-sh-teal bg-sh-teal",
-  "rc-blue":    "border-rc-blue bg-rc-blue",
-  "rc-accent":  "border-rc-accent bg-rc-accent",
+const ACCENT_BG: Record<string, string> = {
+  "sh-green":  "bg-sh-green",
+  "sh-teal":   "bg-sh-teal",
+  "rc-blue":   "bg-rc-blue",
+  "rc-accent": "bg-rc-accent",
 };
-
-const BORDER: Record<string, string> = {
+const ACCENT_TEXT: Record<string, string> = {
+  "sh-green":  "text-sh-green",
+  "sh-teal":   "text-sh-teal",
+  "rc-blue":   "text-rc-blue",
+  "rc-accent": "text-rc-accent",
+};
+const ACCENT_BORDER: Record<string, string> = {
   "sh-green":  "border-sh-green",
   "sh-teal":   "border-sh-teal",
   "rc-blue":   "border-rc-blue",
   "rc-accent": "border-rc-accent",
 };
-
-const TEXT: Record<string, string> = {
-  "sh-green":  "text-sh-green",
-  "sh-teal":   "text-sh-teal",
-  "rc-blue":   "text-rc-blue",
-  "rc-accent": "text-rc-accent",
+const ACCENT_LIGHT: Record<string, string> = {
+  "sh-green":  "bg-sh-chip",
+  "sh-teal":   "bg-[#F0FDFA]",
+  "rc-blue":   "bg-[#EFF6FF]",
+  "rc-accent": "bg-[#FFF7ED]",
 };
 
 export default function AcceleratorsPage() {
@@ -39,87 +43,120 @@ export default function AcceleratorsPage() {
         Our Accelerators, Built for Customer Value
       </h1>
       <p className="mt-3 max-w-3xl text-[16px] text-sh-muted">
-        Each accelerator combines Shopify capabilities with AI, integrations, and proven commerce frameworks — helping customers modernize, optimize, and unlock measurable business value.
+        Each accelerator combines Shopify capabilities with AI, integrations, and proven commerce frameworks — helping customers modernize, optimize, and unlock measurable business value. Click any accelerator to see the full breakdown.
       </p>
 
-      {/* Cards grid */}
-      <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
+      {/* Cards */}
+      <div className="mt-10 grid gap-7 sm:grid-cols-2">
         {accelerators.map((acc) => (
           <Link
             key={acc.id}
             href={`/accelerators/${acc.slug}`}
-            className={`group relative flex flex-col rounded-2xl border-2 bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-lg ${BORDER[acc.color]}`}
+            className={`group flex flex-col rounded-2xl border-2 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg ${ACCENT_BORDER[acc.color]}`}
           >
-            {/* Number badge */}
-            <div className={`mb-5 flex h-12 w-12 items-center justify-center rounded-xl text-2xl ${ACCENT[acc.color]} text-white shadow-sm`}>
-              {acc.icon}
-            </div>
-            <div className={`mb-1 text-xs font-bold uppercase tracking-widest ${TEXT[acc.color]}`}>
-              {acc.number}
-            </div>
-            <h2 className="text-[18px] font-bold text-sh-dark leading-snug">{acc.title}</h2>
-            <p className="mt-3 flex-1 text-[14px] text-sh-muted leading-relaxed">{acc.tagline}</p>
-
-            <div className="mt-4 rounded-lg bg-sh-panel p-3 border border-sh-border">
-              <div className={`text-[11px] font-bold uppercase tracking-wide mb-1 ${TEXT[acc.color]}`}>Customer Value</div>
-              <p className="text-[13px] text-sh-muted">{acc.customerValue}</p>
+            {/* Card top strip */}
+            <div className={`flex items-center gap-4 rounded-t-2xl px-6 py-5 ${ACCENT_LIGHT[acc.color]}`}>
+              <div className={`flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl text-2xl ${ACCENT_BG[acc.color]} text-white shadow-sm`}>
+                {acc.icon}
+              </div>
+              <div>
+                <div className={`text-[11px] font-bold uppercase tracking-widest ${ACCENT_TEXT[acc.color]}`}>
+                  Accelerator {acc.number}
+                </div>
+                <h2 className="text-[17px] font-bold leading-snug text-sh-dark">{acc.title}</h2>
+              </div>
             </div>
 
-            {/* Quarter chips */}
-            <div className="mt-4 flex items-center gap-2">
-              <span className="text-[11px] text-sh-muted font-medium">Quarterly 2026:</span>
-              {[1,2,3,4].map(q => (
-                <span key={q} className={`text-[11px] font-bold px-2 py-0.5 rounded ${acc.activeQuarters.includes(q) ? `${ACCENT[acc.color]} text-white` : "bg-[#F1F5F9] text-[#9CA3AF]"}`}>
-                  Q{q}
+            {/* Body */}
+            <div className="flex flex-1 flex-col gap-4 px-6 py-5">
+              {/* Tagline */}
+              <p className="text-[14px] font-medium leading-relaxed text-sh-dark">{acc.tagline}</p>
+
+              {/* Problem solved */}
+              <div>
+                <div className="mb-1.5 text-[11px] font-bold uppercase tracking-wide text-sh-muted">Problem it solves</div>
+                <p className="line-clamp-3 text-[13px] leading-relaxed text-sh-muted">{acc.problemStatement}</p>
+              </div>
+
+              {/* Outcomes row */}
+              <div className="grid grid-cols-2 gap-2">
+                {acc.outcomes.slice(0, 2).map((o, i) => (
+                  <div key={i} className={`rounded-lg border p-3 ${ACCENT_LIGHT[acc.color]} ${ACCENT_BORDER[acc.color]}`}>
+                    <div className={`text-lg font-extrabold ${ACCENT_TEXT[acc.color]}`}>{o.metric}</div>
+                    <div className="text-[11px] text-sh-muted">{o.label}</div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Ideal for */}
+              <div>
+                <div className="mb-1.5 text-[11px] font-bold uppercase tracking-wide text-sh-muted">Ideal for</div>
+                <ul className="space-y-1">
+                  {acc.idealFor.slice(0, 2).map((item, i) => (
+                    <li key={i} className="flex items-start gap-2 text-[12px] text-sh-muted">
+                      <span className={`mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full ${ACCENT_BG[acc.color]}`} />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Quarter + CTA */}
+              <div className="mt-auto flex items-center justify-between pt-2">
+                <div className="flex items-center gap-2">
+                  <span className="text-[11px] font-medium text-sh-muted">Q2026:</span>
+                  {[1,2,3,4].map(q => (
+                    <span key={q} className={`rounded px-1.5 py-0.5 text-[11px] font-bold ${acc.activeQuarters.includes(q) ? `${ACCENT_BG[acc.color]} text-white` : "bg-[#F1F5F9] text-[#9CA3AF]"}`}>
+                      Q{q}
+                    </span>
+                  ))}
+                </div>
+                <span className={`flex items-center gap-1 text-sm font-semibold ${ACCENT_TEXT[acc.color]}`}>
+                  Full details <span className="transition group-hover:translate-x-1">→</span>
                 </span>
-              ))}
-            </div>
-
-            <div className={`mt-5 flex items-center gap-1 text-sm font-semibold ${TEXT[acc.color]}`}>
-              View accelerator details
-              <span className="transition group-hover:translate-x-1">→</span>
+              </div>
             </div>
           </Link>
         ))}
       </div>
 
-      {/* Roadmap summary table */}
+      {/* Roadmap table */}
       <section className="mt-14">
-        <h2 className="text-xl font-bold text-sh-dark mb-1">Shopify — Roadmap Q2 and Q3</h2>
-        <p className="text-sm text-sh-muted mb-5">All four accelerators mapped to value proposition, marketing activities, sales motion, and practice deliverables.</p>
+        <h2 className="mb-1 text-xl font-bold text-sh-dark">Shopify Practice Roadmap — Q2 &amp; Q3 2026</h2>
+        <p className="mb-6 text-sm text-sh-muted">How all four accelerators map to marketing activities, sales motions, and practice deliverables.</p>
         <div className="overflow-x-auto rounded-xl border border-sh-border">
           <table className="w-full border-collapse bg-white text-[13px]">
             <thead>
-              <tr className="bg-sh-dark text-white text-xs">
-                <th className="px-4 py-3 text-left font-semibold">Accelerator / Product</th>
-                <th className="px-4 py-3 text-left font-semibold text-sh-accent">Value Proposition</th>
-                <th className="px-4 py-3 text-left font-semibold text-sh-accent">Marketing Activities</th>
-                <th className="px-4 py-3 text-left font-semibold text-sh-accent">Sales Motion</th>
-                <th className="px-4 py-3 text-left font-semibold text-sh-accent">Practice Deliverables</th>
+              <tr className="bg-sh-dark text-left text-xs text-white">
+                <th className="px-4 py-3 font-semibold">Accelerator</th>
+                <th className="px-4 py-3 font-semibold">Value Proposition</th>
+                <th className="px-4 py-3 font-semibold">Marketing Activities</th>
+                <th className="px-4 py-3 font-semibold">Sales Motion</th>
+                <th className="px-4 py-3 font-semibold">Practice Deliverables</th>
               </tr>
             </thead>
             <tbody>
               {accelerators.map((acc, i) => (
-                <tr key={acc.id} className={i % 2 === 0 ? "bg-white" : "bg-sh-light"}>
-                  <td className="border-t border-sh-border px-4 py-3 font-semibold text-sh-dark align-top">
-                    <Link href={`/accelerators/${acc.slug}`} className={`hover:underline ${TEXT[acc.color]}`}>
+                <tr key={acc.id} className="odd:bg-white even:bg-sh-light align-top">
+                  <td className="border-t border-sh-border px-4 py-3">
+                    <Link href={`/accelerators/${acc.slug}`} className={`font-semibold hover:underline ${ACCENT_TEXT[acc.color]}`}>
                       {acc.title}
                     </Link>
                   </td>
-                  <td className="border-t border-sh-border px-4 py-3 text-sh-muted align-top">{acc.roadmap.valueProp}</td>
-                  <td className="border-t border-sh-border px-4 py-3 text-sh-muted align-top">
-                    <ul className="space-y-0.5">
-                      {acc.roadmap.marketingActivities.map((m, j) => <li key={j}>• {m}</li>)}
+                  <td className="border-t border-sh-border px-4 py-3 text-sh-muted">{acc.tagline}</td>
+                  <td className="border-t border-sh-border px-4 py-3">
+                    <ul className="space-y-1 text-sh-muted">
+                      {acc.gtm.marketing.slice(0, 2).map((m, j) => <li key={j} className="flex items-start gap-1.5"><span className={`mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full ${ACCENT_BG[acc.color]}`}/>{m}</li>)}
                     </ul>
                   </td>
-                  <td className="border-t border-sh-border px-4 py-3 text-sh-muted align-top">
-                    <ul className="space-y-0.5">
-                      {acc.roadmap.salesMotion.map((s, j) => <li key={j}>• {s}</li>)}
+                  <td className="border-t border-sh-border px-4 py-3">
+                    <ul className="space-y-1 text-sh-muted">
+                      {acc.gtm.sales.slice(0, 2).map((s, j) => <li key={j} className="flex items-start gap-1.5"><span className={`mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full ${ACCENT_BG[acc.color]}`}/>{s}</li>)}
                     </ul>
                   </td>
-                  <td className="border-t border-sh-border px-4 py-3 text-sh-muted align-top">
-                    <ul className="space-y-0.5">
-                      {acc.roadmap.practiceDeliverables.map((d, j) => <li key={j}>• {d}</li>)}
+                  <td className="border-t border-sh-border px-4 py-3">
+                    <ul className="space-y-1 text-sh-muted">
+                      {acc.whatsIncluded[0]?.deliverables.slice(0, 2).map((d, j) => <li key={j} className="flex items-start gap-1.5"><span className={`mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full ${ACCENT_BG[acc.color]}`}/>{d}</li>)}
                     </ul>
                   </td>
                 </tr>
