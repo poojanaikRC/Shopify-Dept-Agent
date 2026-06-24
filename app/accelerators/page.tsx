@@ -112,49 +112,69 @@ export default function AcceleratorsPage() {
         ))}
       </div>
 
-      {/* Roadmap table */}
+      {/* Why Royal Cyber for Shopify */}
       <section className="mt-14">
-        <h2 className="mb-1 text-xl font-bold text-sh-dark">Shopify Practice Roadmap — Q2 &amp; Q3 2026</h2>
-        <p className="mb-6 text-sm text-sh-muted">How all four accelerators map to marketing activities, sales motions, and practice deliverables.</p>
-        <div className="overflow-x-auto rounded-xl border border-sh-border">
-          <table className="w-full border-collapse bg-white text-[13px]">
-            <thead>
-              <tr className="bg-sh-dark text-left text-xs text-white">
-                <th className="px-4 py-3 font-semibold">Accelerator</th>
-                <th className="px-4 py-3 font-semibold">Value Proposition</th>
-                <th className="px-4 py-3 font-semibold">Marketing Activities</th>
-                <th className="px-4 py-3 font-semibold">Sales Motion</th>
-                <th className="px-4 py-3 font-semibold">Practice Deliverables</th>
-              </tr>
-            </thead>
-            <tbody>
-              {accelerators.map((acc, i) => (
-                <tr key={acc.id} className="odd:bg-white even:bg-sh-light align-top">
-                  <td className="border-t border-sh-border px-4 py-3">
-                    <Link href={`/accelerators/${acc.slug}`} className={`font-semibold hover:underline ${ACCENT_TEXT[acc.color]}`}>
-                      {acc.title}
-                    </Link>
-                  </td>
-                  <td className="border-t border-sh-border px-4 py-3 text-sh-muted">{acc.tagline}</td>
-                  <td className="border-t border-sh-border px-4 py-3">
-                    <ul className="space-y-1 text-sh-muted">
-                      {acc.gtm.marketing.slice(0, 2).map((m, j) => <li key={j} className="flex items-start gap-1.5"><span className={`mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full ${ACCENT_BG[acc.color]}`}/>{m}</li>)}
-                    </ul>
-                  </td>
-                  <td className="border-t border-sh-border px-4 py-3">
-                    <ul className="space-y-1 text-sh-muted">
-                      {acc.gtm.sales.slice(0, 2).map((s, j) => <li key={j} className="flex items-start gap-1.5"><span className={`mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full ${ACCENT_BG[acc.color]}`}/>{s}</li>)}
-                    </ul>
-                  </td>
-                  <td className="border-t border-sh-border px-4 py-3">
-                    <ul className="space-y-1 text-sh-muted">
-                      {acc.whatsIncluded[0]?.deliverables.slice(0, 2).map((d, j) => <li key={j} className="flex items-start gap-1.5"><span className={`mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full ${ACCENT_BG[acc.color]}`}/>{d}</li>)}
-                    </ul>
-                  </td>
-                </tr>
+        <div className="mb-1 text-xs font-bold uppercase tracking-widest text-sh-green">Why Royal Cyber</div>
+        <h2 className="mb-2 text-xl font-bold text-sh-dark">Your Shopify Plus Partner for Commerce Excellence</h2>
+        <p className="mb-8 max-w-3xl text-sm text-sh-muted">
+          Royal Cyber is a Shopify Plus Partner with deep expertise across migrations, B2B commerce, AI-powered discovery, and platform growth. We bring pre-built accelerators, proven delivery frameworks, and a dedicated Shopify practice — so your project moves faster and lands better.
+        </p>
+
+        {/* Credential cards */}
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 mb-10">
+          {[
+            { icon: "🏅", label: "Shopify Plus Partner", desc: "Certified Shopify Plus Partner with access to co-sell, early roadmap, and partner support channels." },
+            { icon: "🚀", label: "Pre-Built Accelerators", desc: "4 production-ready accelerators covering migration, B2B, AI commerce, and growth assessment." },
+            { icon: "🔁", label: "End-to-End Delivery", desc: "Strategy, solution design, build, integrations, QA, launch, and hypercare — all under one roof." },
+            { icon: "🤝", label: "ERP & AI Ecosystem", desc: "Certified integrations with NetSuite, SAP, Dynamics, Algolia, Google Vertex AI, and Shopify Markets." },
+          ].map((c, i) => (
+            <div key={i} className="rounded-xl border border-sh-border bg-white p-5 shadow-sm">
+              <div className="mb-3 text-2xl">{c.icon}</div>
+              <div className="mb-1.5 font-bold text-sh-dark text-[14px]">{c.label}</div>
+              <p className="text-[13px] leading-relaxed text-sh-muted">{c.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Expertise areas */}
+        <div className="rounded-2xl border border-sh-border bg-white p-6 mb-10">
+          <div className="mb-4 text-sm font-bold text-sh-dark">Shopify Practice Expertise Areas</div>
+          <div className="flex flex-wrap gap-2">
+            {[
+              "Shopify Plus Implementations","Commerce Modernization & Migration","Shopify B2B Commerce",
+              "AI-Powered Search & Discovery","Headless Commerce (Hydrogen + Oxygen)","Shopify Markets & Cross-Border",
+              "Checkout Extensibility","ERP & PIM Integrations","Managed Services & Optimisation",
+              "Shopify POS & Unified Commerce","Performance & Core Web Vitals","Shopify Functions & Custom Logic",
+            ].map((tag, i) => (
+              <span key={i} className="rounded-full border border-sh-border bg-sh-chip px-3 py-1.5 text-[12px] font-medium text-sh-dark">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* CTA banner */}
+        <div className="rounded-2xl bg-gradient-to-r from-sh-dark to-sh-green p-8 text-white">
+          <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <div className="mb-1 text-xs font-bold uppercase tracking-widest text-white/70">Ready to get started?</div>
+              <h3 className="text-xl font-extrabold">Book a free accelerator discovery call</h3>
+              <p className="mt-1.5 max-w-xl text-sm text-white/75">
+                Every engagement starts with a no-cost assessment. Pick the accelerator that fits your challenge and we&apos;ll scope it with you in a single 60-minute session.
+              </p>
+            </div>
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+              {accelerators.map((acc) => (
+                <Link
+                  key={acc.id}
+                  href={`/accelerators/${acc.slug}`}
+                  className="whitespace-nowrap rounded-lg bg-white/15 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/25"
+                >
+                  {acc.icon} {acc.title.replace(" Accelerator","").replace(" Assessment","")}
+                </Link>
               ))}
-            </tbody>
-          </table>
+            </div>
+          </div>
         </div>
       </section>
     </div>
