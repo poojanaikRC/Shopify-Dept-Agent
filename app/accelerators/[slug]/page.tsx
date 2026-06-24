@@ -59,7 +59,7 @@ export default function AcceleratorPage({ params }: { params: { slug: string } }
         {/* ── 1. THE PROBLEM ── */}
         <section>
           <div className={`mb-2 text-xs font-bold uppercase tracking-widest ${TEXT[acc.color]}`}>The Problem</div>
-          <h2 className="mb-4 text-xl font-bold text-sh-dark">Why this accelerator exists</h2>
+          <h2 className="mb-4 text-xl font-bold text-sh-dark">Market Problem</h2>
           <div className={`rounded-2xl border-2 p-6 ${BORDER[acc.color]} ${LIGHT[acc.color]}`}>
             <p className="text-[15px] leading-relaxed text-sh-dark">{acc.problemStatement}</p>
           </div>
