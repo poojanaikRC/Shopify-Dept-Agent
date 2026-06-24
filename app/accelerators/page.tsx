@@ -101,16 +101,8 @@ export default function AcceleratorsPage() {
                 </ul>
               </div>
 
-              {/* Quarter + CTA */}
-              <div className="mt-auto flex items-center justify-between pt-2">
-                <div className="flex items-center gap-2">
-                  <span className="text-[11px] font-medium text-sh-muted">Q2026:</span>
-                  {[1,2,3,4].map(q => (
-                    <span key={q} className={`rounded px-1.5 py-0.5 text-[11px] font-bold ${acc.activeQuarters.includes(q) ? `${ACCENT_BG[acc.color]} text-white` : "bg-[#F1F5F9] text-[#9CA3AF]"}`}>
-                      Q{q}
-                    </span>
-                  ))}
-                </div>
+              {/* CTA */}
+              <div className="mt-auto pt-2">
                 <span className={`flex items-center gap-1 text-sm font-semibold ${ACCENT_TEXT[acc.color]}`}>
                   Full details <span className="transition group-hover:translate-x-1">→</span>
                 </span>
