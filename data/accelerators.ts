@@ -249,8 +249,111 @@ export const accelerators: Accelerator[] = [
   },
 
   {
-    id: "intelligent-commerce",
+    id: "b2b-subscriptions",
     number: "03",
+    slug: "b2b-subscriptions",
+    title: "B2B Subscriptions App",
+    tagline: "The missing piece in Shopify B2B — recurring orders, contract-based billing, and automated renewals, built natively for Shopify.",
+    color: "rc-blue",
+    icon: "🔁",
+    activeQuarters: [3, 4],
+    status: "In Evaluation",
+
+    problemStatement:
+      "Shopify has no native B2B subscription capability. Today, manufacturers, distributors, and wholesalers who want to offer recurring orders or contract-based billing on Shopify have two options: stitch together DTC subscription apps that weren't designed for B2B (no company accounts, no net terms, no buyer-specific pricing), or manage recurring orders manually through sales reps and spreadsheets. Neither scales. This is a genuine platform gap — and Royal Cyber is building the app to close it.",
+
+    solution:
+      "We are building a dedicated B2B Subscriptions App for the Shopify App Store — purpose-built for B2B commerce. It will enable Shopify merchants to offer recurring orders with customer-specific pricing, automate contract-based billing with net payment terms, manage subscription lifecycles per company account, and give B2B buyers a self-service portal to manage their own schedules and quantities. Unlike DTC subscription apps, every feature is designed around how B2B buyers actually purchase.",
+
+    description:
+      "The B2B Subscriptions App integrates natively with Shopify's B2B APIs — company accounts, price lists, payment terms, and draft orders — to deliver a subscription experience that feels like a natural extension of the Shopify B2B storefront. Merchants configure subscription rules per product, per company, or per buyer segment. Buyers manage their own recurring orders from the buyer portal. Billing runs automatically against agreed payment terms. The app will be listed on the Shopify App Store and available to any Shopify Plus merchant globally.",
+
+    customerValue:
+      "Predictable recurring revenue from B2B buyers, zero manual order management for repeat purchases, and a self-service subscription experience that increases buyer retention and lifetime value.",
+
+    outcomes: [
+      { metric: "100%", label: "native Shopify B2B API integration — company accounts, price lists, net terms" },
+      { metric: "Zero", label: "manual order processing for recurring B2B orders" },
+      { metric: "Self-service", label: "buyer portal for subscription management, pause, skip, and modify" },
+      { metric: "First", label: "dedicated B2B subscription app on the Shopify App Store" },
+    ],
+
+    idealFor: [
+      "Manufacturers and distributors with repeat B2B buyers purchasing on fixed schedules (weekly, monthly, quarterly)",
+      "Wholesalers and buying groups running contract-based supply agreements that need automated billing",
+      "Shopify Plus merchants who sell B2B and want to convert one-time buyers into recurring revenue accounts",
+      "Businesses currently managing B2B repeat orders manually through sales reps, EDI, or phone",
+    ],
+
+    whatsIncluded: [
+      {
+        phase: "Recurring Order Engine",
+        deliverables: [
+          "Subscription setup per product or product group — weekly, monthly, quarterly, or custom cadence",
+          "Company-account-level subscription rules: different schedules and pricing per B2B account",
+          "Buyer-specific pricing on every subscription cycle — honours Shopify B2B price lists automatically",
+          "Flexible order generation: auto-create draft orders or direct orders based on merchant preference",
+        ],
+      },
+      {
+        phase: "Contract Billing & Payment Terms",
+        deliverables: [
+          "Net terms billing (Net 30 / 60 / 90) on recurring cycles — fully integrated with Shopify B2B payment terms",
+          "Invoice generation per subscription cycle with line-item breakdown and purchase order reference",
+          "Automated payment reminders and overdue notifications configurable per company account",
+          "Credit limit enforcement: pause subscription generation when account exceeds credit threshold",
+        ],
+      },
+      {
+        phase: "Buyer Self-Service Portal",
+        deliverables: [
+          "Buyer portal embedded in the Shopify B2B storefront — manage all active subscriptions in one place",
+          "Pause, skip, resume, or cancel subscription cycles without contacting a sales rep",
+          "Modify quantities, swap products, and update delivery addresses per subscription",
+          "Full subscription order history and upcoming order calendar with download to CSV",
+        ],
+      },
+      {
+        phase: "Merchant Admin & Analytics",
+        deliverables: [
+          "Merchant dashboard: active subscriptions, renewal calendar, MRR, churn rate, and at-risk accounts",
+          "Bulk subscription management: update pricing, pause, or migrate subscriptions across accounts",
+          "Shopify Flow integration: trigger automations based on subscription events (created, renewed, paused, cancelled)",
+          "Shopify App Store listing: public availability for all Shopify Plus merchants globally",
+        ],
+      },
+    ],
+
+    gtm: {
+      marketing: [
+        "Shopify App Store listing — primary distribution channel, optimised app listing page with screenshots and demo video",
+        "Launch blog: 'Shopify Has No B2B Subscription App — So We Built One' — targeting Shopify Plus merchants and B2B operators",
+        "LinkedIn campaign: 'How Manufacturers Are Moving Repeat Orders to Shopify Subscriptions'",
+        "Thought leadership: whitepaper on B2B recurring revenue models and the Shopify subscription gap",
+      ],
+      sales: [
+        "Beta programme: 5 design partners from existing Royal Cyber Shopify B2B client base for co-development and early validation",
+        "App Store organic discovery: optimised keywords targeting 'B2B subscriptions Shopify', 'recurring orders Shopify B2B', 'wholesale subscriptions'",
+        "Direct outreach to Shopify Plus merchants currently using DTC subscription apps for B2B (Recharge, Bold, Seal) — positioned as purpose-built alternative",
+        "Bundle offer: B2B Accelerator + B2B Subscriptions App as a combined engagement for net-new B2B builds",
+      ],
+      partners: [
+        "Shopify Plus Partner programme: app development partner listing and Shopify App Store co-marketing",
+        "Shopify Partner Manager: position as a first-party-quality gap filler — seek Shopify Built partner endorsement",
+        "ERP partners: NetSuite, SAP, Dynamics — joint positioning for automated B2B order writeback from subscriptions",
+        "Shopify Payments and Stripe: payment processing integration for automated billing cycles",
+      ],
+    },
+
+    roadmapFocus: [
+      { quarter: "Q3", theme: "Build & Beta", milestone: "Core recurring order engine and buyer portal built; 5 beta design partners onboarded; internal QA complete" },
+      { quarter: "Q4", theme: "App Store Launch", milestone: "Shopify App Store submission and approval; public launch; first 20 paying merchants; launch blog and LinkedIn campaign live" },
+      { quarter: "Q1 2027", theme: "Scale & Expand", milestone: "50+ active merchants; contract billing module GA; ERP integration templates published; Shopify Built partner application submitted" },
+    ],
+  },
+  {
+    id: "intelligent-commerce",
+    number: "04",
     slug: "intelligent-commerce",
     title: "Intelligent Commerce & Product Discovery Accelerator",
     tagline: "Turn your Shopify store into a revenue engine with AI-powered search, personalization, and discovery.",
@@ -353,7 +456,7 @@ export const accelerators: Accelerator[] = [
 
   {
     id: "growth-assessment",
-    number: "04",
+    number: "05",
     slug: "growth-assessment",
     title: "Shopify Growth Assessment",
     tagline: "Identify exactly where your Shopify store is leaving money on the table — with a clear roadmap to fix it.",
@@ -454,107 +557,4 @@ export const accelerators: Accelerator[] = [
     ],
   },
 
-  {
-    id: "b2b-subscriptions",
-    number: "05",
-    slug: "b2b-subscriptions",
-    title: "B2B Subscriptions App",
-    tagline: "The missing piece in Shopify B2B — recurring orders, contract-based billing, and automated renewals, built natively for Shopify.",
-    color: "rc-blue",
-    icon: "🔁",
-    activeQuarters: [3, 4],
-    status: "In Evaluation",
-
-    problemStatement:
-      "Shopify has no native B2B subscription capability. Today, manufacturers, distributors, and wholesalers who want to offer recurring orders or contract-based billing on Shopify have two options: stitch together DTC subscription apps that weren't designed for B2B (no company accounts, no net terms, no buyer-specific pricing), or manage recurring orders manually through sales reps and spreadsheets. Neither scales. This is a genuine platform gap — and Royal Cyber is building the app to close it.",
-
-    solution:
-      "We are building a dedicated B2B Subscriptions App for the Shopify App Store — purpose-built for B2B commerce. It will enable Shopify merchants to offer recurring orders with customer-specific pricing, automate contract-based billing with net payment terms, manage subscription lifecycles per company account, and give B2B buyers a self-service portal to manage their own schedules and quantities. Unlike DTC subscription apps, every feature is designed around how B2B buyers actually purchase.",
-
-    description:
-      "The B2B Subscriptions App integrates natively with Shopify's B2B APIs — company accounts, price lists, payment terms, and draft orders — to deliver a subscription experience that feels like a natural extension of the Shopify B2B storefront. Merchants configure subscription rules per product, per company, or per buyer segment. Buyers manage their own recurring orders from the buyer portal. Billing runs automatically against agreed payment terms. The app will be listed on the Shopify App Store and available to any Shopify Plus merchant globally.",
-
-    customerValue:
-      "Predictable recurring revenue from B2B buyers, zero manual order management for repeat purchases, and a self-service subscription experience that increases buyer retention and lifetime value.",
-
-    outcomes: [
-      { metric: "100%", label: "native Shopify B2B API integration — company accounts, price lists, net terms" },
-      { metric: "Zero", label: "manual order processing for recurring B2B orders" },
-      { metric: "Self-service", label: "buyer portal for subscription management, pause, skip, and modify" },
-      { metric: "First", label: "dedicated B2B subscription app on the Shopify App Store" },
-    ],
-
-    idealFor: [
-      "Manufacturers and distributors with repeat B2B buyers purchasing on fixed schedules (weekly, monthly, quarterly)",
-      "Wholesalers and buying groups running contract-based supply agreements that need automated billing",
-      "Shopify Plus merchants who sell B2B and want to convert one-time buyers into recurring revenue accounts",
-      "Businesses currently managing B2B repeat orders manually through sales reps, EDI, or phone",
-    ],
-
-    whatsIncluded: [
-      {
-        phase: "Recurring Order Engine",
-        deliverables: [
-          "Subscription setup per product or product group — weekly, monthly, quarterly, or custom cadence",
-          "Company-account-level subscription rules: different schedules and pricing per B2B account",
-          "Buyer-specific pricing on every subscription cycle — honours Shopify B2B price lists automatically",
-          "Flexible order generation: auto-create draft orders or direct orders based on merchant preference",
-        ],
-      },
-      {
-        phase: "Contract Billing & Payment Terms",
-        deliverables: [
-          "Net terms billing (Net 30 / 60 / 90) on recurring cycles — fully integrated with Shopify B2B payment terms",
-          "Invoice generation per subscription cycle with line-item breakdown and purchase order reference",
-          "Automated payment reminders and overdue notifications configurable per company account",
-          "Credit limit enforcement: pause subscription generation when account exceeds credit threshold",
-        ],
-      },
-      {
-        phase: "Buyer Self-Service Portal",
-        deliverables: [
-          "Buyer portal embedded in the Shopify B2B storefront — manage all active subscriptions in one place",
-          "Pause, skip, resume, or cancel subscription cycles without contacting a sales rep",
-          "Modify quantities, swap products, and update delivery addresses per subscription",
-          "Full subscription order history and upcoming order calendar with download to CSV",
-        ],
-      },
-      {
-        phase: "Merchant Admin & Analytics",
-        deliverables: [
-          "Merchant dashboard: active subscriptions, renewal calendar, MRR, churn rate, and at-risk accounts",
-          "Bulk subscription management: update pricing, pause, or migrate subscriptions across accounts",
-          "Shopify Flow integration: trigger automations based on subscription events (created, renewed, paused, cancelled)",
-          "Shopify App Store listing: public availability for all Shopify Plus merchants globally",
-        ],
-      },
-    ],
-
-    gtm: {
-      marketing: [
-        "Shopify App Store listing — primary distribution channel, optimised app listing page with screenshots and demo video",
-        "Launch blog: 'Shopify Has No B2B Subscription App — So We Built One' — targeting Shopify Plus merchants and B2B operators",
-        "LinkedIn campaign: 'How Manufacturers Are Moving Repeat Orders to Shopify Subscriptions'",
-        "Thought leadership: whitepaper on B2B recurring revenue models and the Shopify subscription gap",
-      ],
-      sales: [
-        "Beta programme: 5 design partners from existing Royal Cyber Shopify B2B client base for co-development and early validation",
-        "App Store organic discovery: optimised keywords targeting 'B2B subscriptions Shopify', 'recurring orders Shopify B2B', 'wholesale subscriptions'",
-        "Direct outreach to Shopify Plus merchants currently using DTC subscription apps for B2B (Recharge, Bold, Seal) — positioned as purpose-built alternative",
-        "Bundle offer: B2B Accelerator + B2B Subscriptions App as a combined engagement for net-new B2B builds",
-      ],
-      partners: [
-        "Shopify Plus Partner programme: app development partner listing and Shopify App Store co-marketing",
-        "Shopify Partner Manager: position as a first-party-quality gap filler — seek Shopify Built partner endorsement",
-        "ERP partners: NetSuite, SAP, Dynamics — joint positioning for automated B2B order writeback from subscriptions",
-        "Shopify Payments and Stripe: payment processing integration for automated billing cycles",
-      ],
-    },
-
-    roadmapFocus: [
-      { quarter: "Q3", theme: "Build & Beta", milestone: "Core recurring order engine and buyer portal built; 5 beta design partners onboarded; internal QA complete" },
-      { quarter: "Q4", theme: "App Store Launch", milestone: "Shopify App Store submission and approval; public launch; first 20 paying merchants; launch blog and LinkedIn campaign live" },
-      { quarter: "Q1 2027", theme: "Scale & Expand", milestone: "50+ active merchants; contract billing module GA; ERP integration templates published; Shopify Built partner application submitted" },
-    ],
-  },
 ];
