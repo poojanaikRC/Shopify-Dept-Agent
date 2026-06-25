@@ -75,11 +75,7 @@ export default function AcceleratorsPage() {
                       🛍 App Store
                     </span>
                   )}
-                  {acc.id === "b2b-subscriptions" && (
-                    <span className="rounded-full bg-[#FEF3C7] px-2.5 py-0.5 text-[10px] font-bold text-[#92400E]">
-                      Coming Q4 2026
-                    </span>
-                  )}
+
                 </div>
                 <h2 className="text-[17px] font-bold leading-snug text-sh-dark">{acc.title}</h2>
                 <div className="mt-1.5">

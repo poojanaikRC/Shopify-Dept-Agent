@@ -50,7 +50,6 @@ export default function AcceleratorPage({ params }: { params: { slug: string } }
               {acc.id === "b2b-subscriptions" && (
                 <div className="mt-3 flex flex-wrap gap-2">
                   <span className="rounded-full bg-white/20 px-3 py-1 text-xs font-bold text-white">🛍 Shopify App Store listing</span>
-                  <span className="rounded-full bg-[#FEF3C7] px-3 py-1 text-xs font-bold text-[#92400E]">Coming Q4 2026</span>
                   <span className="rounded-full bg-white/15 px-3 py-1 text-xs font-bold text-white">Beta partners open now</span>
                 </div>
               )}
