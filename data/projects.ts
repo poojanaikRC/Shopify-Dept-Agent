@@ -24,8 +24,8 @@ export const projects: Project[] = [
     name: "Collectivus",
     status: "current",
     pm: "Abubakkar Siddique",
-    delivery: "Unassigned",
-    account: "Unassigned",
+    delivery: "Antoline Natasha Rayappan",
+    account: "Murtuza Kagalwala",
     team: [
       { sr: 1, name: "Abubakkar Siddique",                  designation: "Senior Project Manager" },
       { sr: 2, name: "Suthar Nikunj Kumar Bharatbhai",      designation: "Senior Technical Lead (Contractor)" },
@@ -40,8 +40,8 @@ export const projects: Project[] = [
     name: "Lancer",
     status: "current",
     pm: "Kumaraswamy Irugushetty",
-    delivery: "Unassigned",
-    account: "Unassigned",
+    delivery: "Arun Kumar Kalviraya Pillai",
+    account: "Magesh Kumar Ramamoorthy",
     team: [
       { sr: 1, name: "Kumaraswamy Irugushetty",  designation: "Project Manager" },
       { sr: 2, name: "Bhuvaneshwari S",           designation: "Technical Lead" },
@@ -54,8 +54,8 @@ export const projects: Project[] = [
     name: "VPG",
     status: "current",
     pm: "Kumaraswamy Irugushetty",
-    delivery: "Unassigned",
-    account: "Unassigned",
+    delivery: "Arun Kumar Kalviraya Pillai",
+    account: "Magesh Kumar Ramamoorthy",
     team: [
       { sr: 1, name: "Kumaraswamy Irugushetty",  designation: "Project Manager" },
       { sr: 2, name: "Shivam Soni",              designation: "Senior Software Engineer" },
