@@ -13,7 +13,7 @@ export default function SiteHeader() {
               Royal Cyber — Shopify Practice
             </div>
             <div className="text-xs text-white/80">
-              Agent-powered GTM intelligence & weekly execution plan
+              GTM intelligence, quarterly planning &amp; accelerators
             </div>
           </div>
         </Link>
@@ -21,14 +21,14 @@ export default function SiteHeader() {
           <Link href="/" className="rounded-md px-3 py-1.5 text-white/90 transition hover:bg-white/15">
             Dashboard
           </Link>
-          <Link href="/accelerators" className="rounded-md px-3 py-1.5 text-white/90 transition hover:bg-white/15">
-            Accelerators
-          </Link>
           <Link href="/newsletter" className="rounded-md px-3 py-1.5 text-white/90 transition hover:bg-white/15">
             Newsletter
           </Link>
           <Link href="/weekly-plan" className="rounded-md px-3 py-1.5 text-white/90 transition hover:bg-white/15">
             Quarterly Plan
+          </Link>
+          <Link href="/accelerators" className="rounded-md px-3 py-1.5 text-white/90 transition hover:bg-white/15">
+            Accelerators
           </Link>
           <Link href="/projects" className="rounded-md px-3 py-1.5 text-white/90 transition hover:bg-white/15">
             Projects
