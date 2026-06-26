@@ -36,7 +36,7 @@ export default function HomePage() {
           Shopify Practice Insights Dashboard
         </h1>
         <p className="mt-3 max-w-3xl text-[17px] text-sh-muted">
-          A single home for what our Shopify Practice agents produce — GTM intelligence, the 6-week execution plan, and our four accelerators.
+          A single home for what our Shopify Practice agents produce — the Department Agent's GTM intelligence sweep and the rolling quarterly execution plan across all accelerators.
         </p>
       </section>
 
@@ -59,8 +59,8 @@ export default function HomePage() {
 
         <Link href="/weekly-plan"
           className="group rounded-2xl border border-sh-border bg-white p-7 shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg">
-          <div className="text-xs font-bold uppercase tracking-[0.16em] text-rc-accent">{weeklyPlan.org} · Weekly Plan Agent</div>
-          <h2 className="mt-2 text-2xl font-bold text-sh-dark">Shopify Practice Weekly Plan</h2>
+          <div className="text-xs font-bold uppercase tracking-[0.16em] text-rc-accent">{weeklyPlan.org} · Quarterly Plan Agent</div>
+          <h2 className="mt-2 text-2xl font-bold text-sh-dark">Shopify Practice Quarterly Plan</h2>
           <p className="mt-3 text-sm text-sh-muted">
             A {weeklyPlan.weeks.length}-week execution plan covering Migration, AI Commerce, B2B, Search &amp; Discovery, and Platform Modernization.
           </p>
@@ -70,7 +70,7 @@ export default function HomePage() {
             <span><b className="text-sh-dark">{weeklyPlan.raci.rows.length}</b> RACI rows</span>
           </div>
           <div className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-sh-green">
-            Open weekly plan <span className="transition group-hover:translate-x-0.5">→</span>
+            Open quarterly plan <span className="transition group-hover:translate-x-0.5">→</span>
           </div>
         </Link>
       </section>
