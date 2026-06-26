@@ -30,7 +30,7 @@ export interface Report {
 
 export const report: Report = {
   title: "Shopify Practice — Trend & GTM Intelligence Report",
-  generated: "June 19, 2026",
+  generated: "June 26, 2026",
   sub: "Weekly intelligence sweep for practice leads, solution architects, sales, and marketing across the Shopify ecosystem",
   tags: [
     { label: "Breakout: Shopify B2B & Agentic Commerce", hot: true },
