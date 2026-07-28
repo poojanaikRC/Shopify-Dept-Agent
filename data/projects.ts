@@ -63,4 +63,4 @@ export const projects: Project[] = [
   },
 ];
 
-export const updatedDate = "Jul 8, 2026";
+export const updatedDate = "Jul 28, 2026";
